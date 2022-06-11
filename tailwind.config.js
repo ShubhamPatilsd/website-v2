@@ -22,6 +22,7 @@ module.exports = {
           "Arial",
           "sans-serif",
         ],
+        monospace: ["Fira Code", "monospace"],
       },
     },
   },

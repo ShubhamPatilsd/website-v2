@@ -13,11 +13,10 @@ export const Hero = () => {
             </p>
             <h1 className="md:text-left text-center">Shubham Patil</h1>
             <p className="max-w-2xl md:text-left text-center">
-              Programmer by night and high schooler by day. I'm a fullstack
-              developer who especially loves building awesome things with code!
-              I also have a blog and a YouTube channel where I talk about tech
-              as well. At the moment, coding is a hobby of mine, but I'm intent
-              on expanding it into a career in the future!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
+              voluptatibus optio debitis eveniet harum, suscipit atque
+              laboriosam esse voluptatum sunt! Impedit eius enim iusto saepe
+              culpa, minima quod harum necessitatibus!
             </p>
           </div>
           <Image
@@ -30,7 +29,7 @@ export const Hero = () => {
             className="rounded-full"
           />
         </div>
-        <div className="flex space-x-4">
+        {/* <div className="flex space-x-4">
           <Link href="https://github.com/ShubhamPatilsd">
             <p className="font-monospace text-accent hover:underline cursor-pointer">
               GitHub
@@ -52,7 +51,7 @@ export const Hero = () => {
               Twitter
             </p>
           </Link>
-        </div>
+        </div> */}
       </div>
     </>
   );

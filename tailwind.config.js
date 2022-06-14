@@ -13,7 +13,7 @@ module.exports = {
 
       fontFamily: {
         sans: [
-          "Inter",
+          "Rubik",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",

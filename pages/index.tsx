@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { Hero } from "../components/Hero";
 import { Navbar } from "../components/Navbar";
-import { Skills } from "../components/Skills";
+import { Blog } from "../components/Blog";
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +11,7 @@ const Home: NextPage = () => {
       <div className="flex md:justify-center p-12 md:p-4">
         <div className="space-y-16">
           <Hero />
-          <Skills />
+          <Blog />
         </div>
       </div>
     </>

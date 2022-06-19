@@ -68,11 +68,7 @@ export const Blog = () => {
       <div className="mt-4 space-y-2">
         {blogs.map((blog, i) => {
           return (
-            <a
-              target="_blank"
-              href={blog.canonical_url}
-              rel="noopener noreferrer"
-            >
+            <a target="_blank" href={blog.url} rel="noopener noreferrer">
               <div className="cursor-pointer">
                 <BlogCard blog={blog} />
               </div>

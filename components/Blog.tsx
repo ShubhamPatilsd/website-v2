@@ -57,7 +57,7 @@ export const Blog = () => {
 
   return (
     <div className="max-w-4xl">
-      <h3 className="text-[#00b894]">Blog Posts</h3>
+      <h3 className="text-secondary mb-2">Blog Posts</h3>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero doloremque
         beatae cupiditate debitis fugiat consectetur alias ipsam animi corrupti
@@ -70,7 +70,7 @@ export const Blog = () => {
           return (
             <a
               target="_blank"
-              href="https://twitter.com/"
+              href={blog.canonical_url}
               rel="noopener noreferrer"
             >
               <div className="cursor-pointer">

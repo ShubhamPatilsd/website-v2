@@ -7,7 +7,7 @@ interface BlogCardProps {
 
 export const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
   return (
-    <div className="hover:bg-slate-800 rounded-md p-4">
+    <div className="hover:bg-slate-800 rounded-md p-4 transition duration-300 ease-in-out">
       <p className="text-xl font-medium">{blog.title}</p>
       <span className="flex">
         <p className="pr-2">

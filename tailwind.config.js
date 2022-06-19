@@ -8,7 +8,11 @@ module.exports = {
       colors: {
         accent: "var(--accent)",
         paragraph: "var(--paragraph)",
-        background: "var(--background)",
+        background: {
+          lighter: "var(--background_lighter)",
+          DEFAULT: "var(--background)",
+        },
+        secondary: "var(--secondary)",
       },
 
       fontFamily: {

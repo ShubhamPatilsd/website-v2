@@ -12,6 +12,8 @@
   --accent: #2ecc71;
   --paragraph: #bdbdbd;
   --background: #03171f;
+  --background_lighter: #041d28;
+  --secondary: #00b894;
 }
 
 @layer base {

@@ -6,6 +6,8 @@ import { Blog } from "../components/Blog";
 import { client } from "../util/client";
 import { Result } from "../types/sanityTypes";
 import { Projects } from "../components/Projects/Projects";
+import { Current } from "../components/Updates/Current";
+import { Before } from "../components/Updates/Before";
 
 interface SanityProjectProps {
   projects: Result[];
@@ -18,7 +20,10 @@ const Home: NextPage<SanityProjectProps> = ({ projects }) => {
       <div className="flex md:justify-center p-12 md:p-4">
         <div className="space-y-16">
           <Hero />
+
           <Projects projects={projects} />
+          <Current />
+          <Before />
           <Blog />
         </div>
       </div>

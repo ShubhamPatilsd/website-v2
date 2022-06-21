@@ -8,12 +8,12 @@ interface ProjectTypes {
 export const Projects: React.FC<ProjectTypes> = ({ projects }) => {
   return (
     <div>
-      <h3 className="text-secondary mb-2">Projects</h3>
+      <h3 className="text-secondary mb-3">Projects</h3>
       <div className="gap-6 grid grid-cols-1 md:grid-cols-2">
         {projects.map((project, i) => {
           return (
             <div key={i}>
-              <ProjectCard project={project} />;
+              <ProjectCard project={project} />
             </div>
           );
         })}

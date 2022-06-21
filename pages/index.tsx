@@ -8,26 +8,43 @@ import { Result } from "../types/sanityTypes";
 import { Projects } from "../components/Projects/Projects";
 import { Current } from "../components/Updates/Current";
 import { Before } from "../components/Updates/Before";
+import FadeIn from "react-fade-in";
+import { useEffect, useState } from "react";
 
 interface SanityProjectProps {
   projects: Result[];
 }
 
 const Home: NextPage<SanityProjectProps> = ({ projects }) => {
-  return (
-    <>
-      <Navbar />
-      <div className="flex md:justify-center p-12 md:p-4">
-        <div className="space-y-16">
-          <Hero />
+  const [loading, setLoading] = useState<boolean>(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+  }, []);
 
-          <Projects projects={projects} />
-          <Current />
-          <Before />
-          <Blog />
+  return !loading ? (
+    <>
+      <FadeIn>
+        <Navbar />
+        <div className="flex md:justify-center p-12 md:p-8">
+          <div className="space-y-16">
+            <Hero />
+            <Projects projects={projects} />
+            <Current />
+            <Before />
+            <Blog />
+          </div>
         </div>
-      </div>
+      </FadeIn>
     </>
+  ) : (
+    <div className="h-screen flex justify-center items-center transition duration-150 ease-in-out">
+      {" "}
+      <FadeIn>
+        <img src="/logo.svg" className="animate-bounce w-56 h-56" />
+      </FadeIn>
+    </div>
   );
 };
 

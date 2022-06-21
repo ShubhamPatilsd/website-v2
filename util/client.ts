@@ -3,9 +3,8 @@ import imageUrlBuilder from "@sanity/image-url";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 export const client = sanityClient({
-  projectId:
-    process.env.SANITY_PROJECT_ID || "why-does-this-work-i-have-no-clue",
-  dataset: process.env.SANITY_DATASET, // or the name you chose in step 1
+  projectId: process.env.SANITY_PROJECT_ID || "7ok6rxeh",
+  dataset: process.env.SANITY_DATASET || "production", // or the name you chose in step 1
   useCdn: true,
 });
 

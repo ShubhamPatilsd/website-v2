@@ -12,7 +12,7 @@ export const Hero = () => {
               Hey there! I'm
             </p>
             <h1 className="md:text-left text-center">Shubham Patil</h1>
-            <p className="max-w-2xl md:text-left text-center">
+            <p className="max-w-xl md:text-left text-center">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
               voluptatibus optio debitis eveniet harum, suscipit atque
               laboriosam esse voluptatum sunt! Impedit eius enim iusto saepe
@@ -23,7 +23,7 @@ export const Hero = () => {
             src="https://avatars.githubusercontent.com/u/55328098?v=4"
             width={150}
             height={150}
-            layout="fixed"
+            layout="intrinsic"
             placeholder="blur"
             blurDataURL="https://avatars.githubusercontent.com/u/55328098?v=4"
             className="rounded-full"

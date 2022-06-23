@@ -52,7 +52,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   // It's important to default the slug so that it doesn't return "undefined"
   const projects = await client.fetch(
     `
-    *[_type == "project"]
+    *[_type == "project"] | order(order asc)
   `
   );
   console.log(projects);

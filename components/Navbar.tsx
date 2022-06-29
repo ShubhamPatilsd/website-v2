@@ -1,5 +1,7 @@
 import Image from "next/image";
-import { FiGithub, FiLinkedin, FiMail, FiTwitter } from "react-icons/fi";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { SiDevdotto } from "react-icons/si";
+import { HiMail } from "react-icons/hi";
 
 export const Navbar = () => {
   return (
@@ -10,25 +12,31 @@ export const Navbar = () => {
           href="https://github.com/ShubhamPatilsd"
           className="transition hover:text-paragraph"
         >
-          <FiGithub />
+          <FaGithub />
         </a>
         <a
           href="https://www.linkedin.com/in/shubham-patil-5352a3215/"
           className="transition hover:text-paragraph"
         >
-          <FiLinkedin />
+          <FaLinkedin />
         </a>
         <a
           href="https://twitter.com/ShubhamPatilsd"
           className="transition hover:text-paragraph"
         >
-          <FiTwitter />
+          <FaTwitter />
         </a>
         <a
           href="mailto:shubhampatilsd@gmail.com"
           className="transition hover:text-paragraph"
         >
-          <FiMail />
+          <HiMail />
+        </a>
+        <a
+          href="mailto:shubhampatilsd@gmail.com"
+          className="transition hover:text-paragraph"
+        >
+          <SiDevdotto size={26} />
         </a>
       </div>
     </nav>

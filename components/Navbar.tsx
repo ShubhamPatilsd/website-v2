@@ -33,7 +33,7 @@ export const Navbar = () => {
           <HiMail />
         </a>
         <a
-          href="mailto:shubhampatilsd@gmail.com"
+          href="https://dev.to/shubhampatilsd/"
           className="transition hover:text-paragraph"
         >
           <SiDevdotto size={26} />

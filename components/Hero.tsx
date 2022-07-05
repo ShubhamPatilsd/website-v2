@@ -12,11 +12,25 @@ export const Hero = () => {
               Hey there! I'm
             </p>
             <h1 className="md:text-left text-center">Shubham Patil</h1>
-            <p className="max-w-xl md:text-left text-center">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-              voluptatibus optio debitis eveniet harum, suscipit atque
-              laboriosam esse voluptatum sunt! Impedit eius enim iusto saepe
-              culpa, minima quod harum necessitatibus!
+            <p className="max-w-xl md:text-left text-center prose prose-a:text-sky-600 text-paragraph">
+              I'm a
+              {" " +
+                (new Date(
+                  Date.now() - new Date("6 July 2007").getTime()
+                ).getFullYear() -
+                  1970) +
+                " "}
+              year old student and fullstack developer based in the Bay Area. I
+              like to learn by making projects, and I have numerous on my GitHub
+              profile. Currently I'm building{" "}
+              <a
+                href="https://notium.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Notium
+              </a>
+              , a notetaking app specialized for CS.
             </p>
           </div>
           <Image

@@ -58,11 +58,8 @@ export const Blog = () => {
   return (
     <div className="max-w-4xl">
       <h3 className="text-secondary mb-2">Blog Posts</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero doloremque
-        beatae cupiditate debitis fugiat consectetur alias ipsam animi corrupti
-        voluptate quidem cum, obcaecati ea officiis? Quod dolor iure corporis
-        voluptas.
+      <p className="prose prose-a:text-sky-600 text-paragraph max-w-none">
+        Here are some blogs that I've written :)
       </p>
 
       <div className="mt-4 space-y-2">

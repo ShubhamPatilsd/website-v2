@@ -10,6 +10,7 @@ import { Current } from "../components/Updates/Current";
 import { Before } from "../components/Updates/Before";
 import FadeIn from "react-fade-in";
 import { useEffect, useState } from "react";
+import { Photos } from "../components/Photos";
 
 interface SanityProjectProps {
   projects: Result[];
@@ -34,6 +35,7 @@ const Home: NextPage<SanityProjectProps> = ({ projects }) => {
             <Current />
             <Before />
             <Blog />
+            <Photos />
           </div>
         </div>
       </FadeIn>
@@ -55,7 +57,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     *[_type == "project"] | order(order asc)
   `
   );
-  console.log(projects);
   return {
     props: {
       projects,

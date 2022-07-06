@@ -11,6 +11,7 @@ import { Before } from "../components/Updates/Before";
 import FadeIn from "react-fade-in";
 import { useEffect, useState } from "react";
 import { Photos } from "../components/Photos";
+import { Footer } from "../components/Footer";
 
 interface SanityProjectProps {
   projects: Result[];
@@ -21,7 +22,7 @@ const Home: NextPage<SanityProjectProps> = ({ projects }) => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 4000);
+    }, 1500);
   }, []);
 
   return !loading ? (
@@ -34,8 +35,9 @@ const Home: NextPage<SanityProjectProps> = ({ projects }) => {
             <Projects projects={projects} />
             <Current />
             <Before />
-            <Blog />
             <Photos />
+            <Blog />
+            <Footer />
           </div>
         </div>
       </FadeIn>
@@ -44,7 +46,7 @@ const Home: NextPage<SanityProjectProps> = ({ projects }) => {
     <div className="h-screen flex justify-center items-center transition duration-150 ease-in-out">
       {" "}
       <FadeIn>
-        <img src="/logo.svg" className="animate-bounce w-56 h-56" />
+        <img src="/logo.svg" className="w-56 h-56" />
       </FadeIn>
     </div>
   );

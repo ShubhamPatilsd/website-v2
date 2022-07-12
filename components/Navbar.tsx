@@ -5,7 +5,7 @@ import { HiMail } from "react-icons/hi";
 
 export const Navbar = () => {
   return (
-    <nav className="py-2 px-10 mb-10 flex items-center justify-between">
+    <nav className="py-2 pl-2 pr-4 sm:pr-6 sm:pl-4 md:pr-10 md:pl-6 mb-10 flex items-center justify-between">
       <Image src="/logo.svg" width={60} height={60} />
       <div className="flex text-white text-[25px] space-x-6">
         <a

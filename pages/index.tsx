@@ -29,7 +29,7 @@ const Home: NextPage<SanityProjectProps> = ({ projects }) => {
     <>
       <FadeIn>
         <Navbar />
-        <div className="flex md:justify-center p-12 md:p-8">
+        <div className="flex md:justify-center p-8 md:p-8">
           <div className="space-y-16">
             <Hero />
             <Projects projects={projects} />

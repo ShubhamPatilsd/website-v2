@@ -16,7 +16,7 @@ export const Hero = () => {
               I'm a
               {" " +
                 (new Date(
-                  Date.now() - new Date("6 July 2007").getTime()
+                  Date.now() - new Date("29 September 2007").getTime()
                 ).getFullYear() -
                   1970) +
                 " "}

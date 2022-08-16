@@ -13,7 +13,7 @@ export const Current = () => {
   return (
     <div>
       <h3 className="text-secondary mb-3">Current Work</h3>
-      <ReactMarkdown className="prose prose-a:text-sky-600 text-paragraph max-w-none">
+      <ReactMarkdown className="prose prose-a:text-sky-600 text-paragraph max-w-2xl">
         {text}
       </ReactMarkdown>
     </div>

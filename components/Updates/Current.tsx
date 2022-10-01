@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 const text = `
 Currently, I'm:
 
-- Interning at [Hack Plus](https://hackplus.io) to help build a fullstack web application
+- Helping to run the [MSJCS Club](https://msjcs.vercel.app) with amazing events to help people get into coding!
 - Building [Notium](https://notium.vercel.app), a notetaking app specialized for CS
 - Organizing [CodeDay Bay Area](https://codeday.org/ba), a hackathon for underserved students to break into tech
 - Probably coding & eating a snack 🍫

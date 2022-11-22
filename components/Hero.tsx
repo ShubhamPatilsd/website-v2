@@ -24,13 +24,14 @@ export const Hero = () => {
               like to learn by making projects, and I have numerous on my GitHub
               profile. Currently I'm building{" "}
               <a
-                href="https://notium.vercel.app"
+                href="https://tripley.app"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Notium
               </a>
-              , a notetaking app specialized for CS.
+              , a travel app that helps you manage and plan your trips with
+              ease.
             </p>
           </div>
           <Image

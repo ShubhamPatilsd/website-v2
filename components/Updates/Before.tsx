@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 const text = `
 In the past, I have:
 
+- Won 3rd place at [Trivalley Hacks](https://trivalleyhacks.org) with [Evergreen](https://evergreen-app.vercel.app) a way for home gardeners to sell their fresh and organic produce with consumers in their neighborhood. This time I got 30 minutes of sleep at this hackathon (big improvement).
 - Won 2nd place at [Los Altos Hacks](https://www.losaltoshacks.com/) with [Hitch](https://devpost.com/software/cheetah#updates), a way to buddy up with someone to go on a roadtrip (instead of going alone). I got zero hours of sleep this weekend by the way.
 - Helped to organize [Leland Hacks](https://lelandhacks.com), a 12 hour hackathon for beginner students.
 - Interned at [Hack Plus](https://hackplus.io) to help build a fullstack web application

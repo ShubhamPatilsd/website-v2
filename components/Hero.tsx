@@ -28,7 +28,7 @@ export const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Notium
+                Tripley
               </a>
               , a travel app that helps you manage and plan your trips with
               ease.

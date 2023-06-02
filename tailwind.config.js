@@ -17,7 +17,7 @@ module.exports = {
 
       fontFamily: {
         sans: [
-          "Rubik",
+          "EB Garamond",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",

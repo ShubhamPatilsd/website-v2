@@ -11,7 +11,9 @@ export const Hero = () => {
               {" "}
               Hey there! I'm
             </p>
-            <h1 className="md:text-left text-center">Shubham Patil</h1>
+            <h1 className="md:text-left text-6xl italic font-black text-center">
+              Shubham Patil
+            </h1>
             <p className="max-w-xl md:text-left text-center prose prose-a:text-sky-600 text-paragraph">
               I'm a
               {" " +
@@ -28,7 +30,7 @@ export const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Notium
+                Tripley
               </a>
               , a travel app that helps you manage and plan your trips with
               ease.

@@ -28,16 +28,29 @@ const Home: NextPage<SanityProjectProps> = ({ projects }) => {
   return !loading ? (
     <>
       <FadeIn>
-        <Navbar />
-        <div className="flex md:justify-center p-8 md:p-8">
+        {/* <Navbar /> */}
+        <div className="z-0">
+          <img
+            className="z-0 absolute right-[10%] top-0"
+            src="/Vectorblobblue.svg"
+          />
+          <img
+            className="z-0 absolute left-1/4 bottom-1/4"
+            src="/Vectorblobpurple.svg"
+          />
+        </div>
+        <div className="md:justify-center z-99 p-8 md:py-[6.25rem] md:px-[8rem]">
           <div className="space-y-16">
-            <Hero />
-            <Projects projects={projects} />
+            <div className="flex justify-center">
+              <Hero />
+            </div>
+
+            {/* <Projects projects={projects} />
             <Current />
             <Before />
             <Photos />
             <Blog />
-            <Footer />
+            <Footer /> */}
           </div>
         </div>
       </FadeIn>

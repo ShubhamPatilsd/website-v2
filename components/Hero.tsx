@@ -5,13 +5,13 @@ export const Hero = () => {
   return (
     <>
       <div className="space-y-4">
-        <div className="flex-col-reverse flex justify-center md:flex-row items-center">
+        <div className="flex-col-reverse flex justify-left md:flex-row items-center">
           <div className="space-y-2 md:space-y-4 pt-16 md:pt-0 md:pr-16">
             <p className="uppercase tracking-[0.2em] text-xs text-center md:text-left">
               {" "}
               Hey there! I'm
             </p>
-            <h1 className="md:text-left text-6xl italic font-black text-center">
+            <h1 className="md:text-left text-6xl md:text-7xl italic font-black text-center">
               Shubham Patil
             </h1>
             <p className="max-w-xl md:text-left text-center prose prose-a:text-sky-600 text-paragraph">
@@ -36,7 +36,7 @@ export const Hero = () => {
               ease.
             </p>
           </div>
-          <Image
+          {/* <Image
             src="https://avatars.githubusercontent.com/u/55328098?v=4"
             width={150}
             height={150}
@@ -44,7 +44,7 @@ export const Hero = () => {
             placeholder="blur"
             blurDataURL="https://avatars.githubusercontent.com/u/55328098?v=4"
             className="rounded-full"
-          />
+          /> */}
         </div>
         {/* <div className="flex space-x-4">
           <Link href="https://github.com/ShubhamPatilsd">

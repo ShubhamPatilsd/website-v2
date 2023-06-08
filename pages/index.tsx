@@ -12,6 +12,7 @@ import FadeIn from "react-fade-in";
 import { useEffect, useState } from "react";
 import { Photos } from "../components/Photos";
 import { Footer } from "../components/Footer";
+import { ScrollDown } from "../components/ScrollDown";
 
 interface SanityProjectProps {
   projects: Result[];
@@ -31,26 +32,29 @@ const Home: NextPage<SanityProjectProps> = ({ projects }) => {
         {/* <Navbar /> */}
         <div className="z-0">
           <img
-            className="z-0 absolute right-[10%] top-0"
+            className="z-0  right-[10%] top-0 select-none ease-in-out duration-700 absolute"
             src="/Vectorblobblue.svg"
           />
           <img
-            className="z-0 absolute left-1/4 bottom-1/4"
+            className="z-0  left-1/4 bottom-1/4 select-none absolute"
             src="/Vectorblobpurple.svg"
           />
         </div>
         <div className="md:justify-center z-99 p-8 md:py-[6.25rem] md:px-[8rem]">
           <div className="space-y-16">
-            <div className="flex justify-center">
+            <div className="flex justify-center h-[75vh] items-center">
               <Hero />
             </div>
 
-            {/* <Projects projects={projects} />
+            <div className="flex justify-center">
+              <ScrollDown />
+            </div>
+            <Projects projects={projects} />
             <Current />
             <Before />
             <Photos />
             <Blog />
-            <Footer /> */}
+            <Footer />
           </div>
         </div>
       </FadeIn>

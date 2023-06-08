@@ -5,13 +5,13 @@ export const Hero = () => {
   return (
     <>
       <div className="space-y-4">
-        <div className="flex-col-reverse flex justify-left md:flex-row items-center">
+        <div className="flex-col-reverse flex justify-left md:flex-row">
           <div className="space-y-2 md:space-y-4 pt-16 md:pt-0 md:pr-16">
             <p className="uppercase tracking-[0.2em] text-xs text-center md:text-left">
               {" "}
               Hey there! I'm
             </p>
-            <h1 className="md:text-left text-6xl md:text-7xl italic font-black text-center">
+            <h1 className="md:text-left text-6xl md:text-8xl italic font-black text-center">
               Shubham Patil
             </h1>
             <p className="max-w-xl md:text-left text-center prose prose-a:text-sky-600 text-paragraph">

@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import { Photos } from "../components/Photos";
 import { Footer } from "../components/Footer";
 import { ScrollDown } from "../components/ScrollDown";
+import { About } from "../components/About";
 
 interface SanityProjectProps {
   projects: Result[];
@@ -61,6 +62,7 @@ const Home: NextPage<SanityProjectProps> = ({ projects }) => {
             <div className="flex justify-center">
               <ScrollDown />
             </div>
+            <About />
             <Projects projects={projects} />
             <Current />
             <Before />

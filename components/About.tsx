@@ -67,7 +67,7 @@ export const About = () => {
         </div>
         {/* pictures */}
         <div className="w-full lg:w-1/2">
-          <div className="mx-auto max-w-max border-red-500 grid grid-flow-col gap-12 auto-cols-auto grid-rows-2">
+          <div className="mx-auto max-w-max  grid gap-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
             <Polaroid />
             <Polaroid />
             <Polaroid />

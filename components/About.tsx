@@ -2,7 +2,7 @@ import { Polaroid } from "./Polaroid";
 
 export const About = () => {
   return (
-    <div className="">
+    <div>
       <h1 className="md:text-left italic font-black">Hacking Since '07</h1>
 
       <div className="flex flex-col lg:flex-row mt-4 space-y-12 lg:space-x-12 lg:space-y-0">

@@ -2,6 +2,7 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
 /* @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@100;200;300;400;500;600;700;800;900&display=swap"); */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -24,8 +25,8 @@
     /* background-color: var(--background); */
     height: 100%;
     width: 100%;
-
-    background-image: radial-gradient(circle at 1px 1px, #D2D6DB 1px, transparent 0);
+    /* was  #D2D6DB*/
+    background-image: radial-gradient(circle at 1px 1px, rgba(215, 219, 224, 0.536), 1px, transparent 0);
     background-size: 15px 15px;
 
 
@@ -75,4 +76,9 @@
     letter-spacing: 0.01em;
     color: var(--paragraph);
   }
+
+  .marker{
+    font-family: 'Permanent Marker', cursive;
+  }
+
 }

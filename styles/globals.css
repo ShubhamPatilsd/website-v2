@@ -26,7 +26,10 @@
     width: 100%;
 
     background-image: radial-gradient(circle at 1px 1px, #D2D6DB 1px, transparent 0);
-     background-size: 15px 15px;
+    background-size: 15px 15px;
+
+
+     
   }
 
   h1 {

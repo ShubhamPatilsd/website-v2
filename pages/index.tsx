@@ -30,7 +30,7 @@ const Home: NextPage<SanityProjectProps> = ({ projects }) => {
     <>
       <FadeIn>
         {/* <Navbar /> */}
-        <div className="z-0">
+        {/* <div className="z-0">
           <img
             className="z-0  right-[10%] top-0 select-none ease-in-out duration-700 absolute"
             src="/Vectorblobblue.svg"
@@ -39,10 +39,22 @@ const Home: NextPage<SanityProjectProps> = ({ projects }) => {
             className="z-0  left-1/4 bottom-1/4 select-none absolute"
             src="/Vectorblobpurple.svg"
           />
-        </div>
-        <div className="md:justify-center z-99 p-8 md:py-[6.25rem] md:px-[8rem]">
+        </div> */}
+
+        {/* <div className="h-screen z-0 bg-[url('https://tailwindui.com/img/beams-home@95.jpg)]"> */}
+        <img
+          className="z-0 opacity-50 select-none w-screen absolute h-screen z-[-99999]"
+          src="/beambackground.jpg"
+        />
+        {/* <img
+            className="z-0  left-1/4 bottom-1/4 select-none absolute"
+            src="/Vectorblobpurple.svg"
+          /> */}
+        {/* </div> */}
+
+        <div className="md:justify-center relative z-99 p-8 md:py-[6.25rem] md:px-[8rem]">
           <div className="space-y-16">
-            <div className="flex justify-center h-[75vh] items-center">
+            <div className="flex justify-center h-[75vh] items-center ">
               <Hero />
             </div>
 

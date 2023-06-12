@@ -14,6 +14,7 @@ import { Photos } from "../components/Photos";
 import { Footer } from "../components/Footer";
 import { ScrollDown } from "../components/ScrollDown";
 import { About } from "../components/About";
+import { WorkExperience } from "../components/WorkExperience/WorkExperience";
 
 interface SanityProjectProps {
   projects: Result[];
@@ -62,7 +63,12 @@ const Home: NextPage<SanityProjectProps> = ({ projects }) => {
             <div className="flex justify-center">
               <ScrollDown />
             </div>
-            <About />
+            <div className="max-w-7xl mx-auto">
+              <About />
+            </div>
+            <div className="max-w-7xl mx-auto flex justify-center">
+              <WorkExperience />
+            </div>
             <Projects projects={projects} />
             <Current />
             <Before />

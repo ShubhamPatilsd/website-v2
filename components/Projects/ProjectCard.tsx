@@ -16,7 +16,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           className="rounded-t-xl mx-auto shadow-xl"
         />
       </div>
-      <div className="rounded-b-xl bg-background-lighter p-6 max-w-xl mx-auto shadow-xl space-y-4 flex-1">
+      <div className="rounded-b-xl bg-white p-6 max-w-xl mx-auto shadow-xl space-y-4 flex-1">
         <div className="space-y-1 w-min">
           {project.demo && (
             <a

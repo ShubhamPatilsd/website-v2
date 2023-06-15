@@ -69,7 +69,9 @@ const Home: NextPage<SanityProjectProps> = ({ projects }) => {
             <div className="max-w-7xl mx-auto flex justify-center">
               <WorkExperience />
             </div>
-            <Projects projects={projects} />
+            <div className="max-w-7xl mx-auto">
+              <Projects projects={projects} />
+            </div>
             <Current />
             <Before />
             <Photos />

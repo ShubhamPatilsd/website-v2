@@ -9,15 +9,22 @@ interface ProjectCardProps {
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <div className={`w-full h-full flex flex-col`}>
+    <div
+      className={`w-full h-full flex lg:flex-row space-x-0 space-y-4 lg:space-y-0 lg:space-x-8 xl:space-x-8 flex-col p-6`}
+    >
       <div>
         <img
-          src={urlFor(project.image).width(500).height(300).url()}
-          className="rounded-t-xl mx-auto shadow-xl"
+          src={urlFor(project.image).url()}
+          className="rounded-lg mx-auto lg:w-72 w-full md:w-[80%]"
         />
       </div>
-      <div className="rounded-b-xl bg-white p-6 max-w-xl mx-auto shadow-xl space-y-4 flex-1">
-        <div className="space-y-1 w-min">
+      <div className="mx-auto space-y-5  flex-1">
+        <div>
+          <h3 className="text-paragraph text-2xl">{project.name}</h3>
+          <p className="text-paragraph prose mt-1">{project.description}</p>
+        </div>
+
+        <div className="space-y-1 flex space-x-4 w-min">
           {project.demo && (
             <a
               href={project.demo}
@@ -41,8 +48,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             </a>
           )}
         </div>
-        <h3 className="text-paragraph">{project.name}</h3>
-        <p className="text-paragraph prose">{project.description}</p>
       </div>
     </div>
   );

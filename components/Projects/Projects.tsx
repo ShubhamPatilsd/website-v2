@@ -9,7 +9,8 @@ export const Projects: React.FC<ProjectTypes> = ({ projects }) => {
   return (
     <div className="mx-auto">
       <h1 className="md:text-left italic font-black mb-4 w-full">Projects</h1>
-      <div className="gap-6 grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto">
+      {/* md:grid-cols-2 */}
+      <div className="gap-6 grid grid-cols-1 max-w-5xl mx-auto">
         {projects.map((project, i) => {
           return (
             <div key={i}>

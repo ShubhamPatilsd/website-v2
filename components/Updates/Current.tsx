@@ -12,7 +12,9 @@ Currently, I'm:
 export const Current = () => {
   return (
     <div>
-      <h3 className="text-secondary mb-3">Current Work</h3>
+      <h1 className="md:text-left italic font-black mb-4 w-full">
+        Current Work
+      </h1>
       <ReactMarkdown className="prose prose-a:text-sky-600 text-paragraph max-w-2xl">
         {text}
       </ReactMarkdown>

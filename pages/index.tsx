@@ -72,12 +72,17 @@ const Home: NextPage<SanityProjectProps> = ({ projects }) => {
             <div className="max-w-7xl mx-auto">
               <Projects projects={projects} />
             </div>
-
+            {/* 
             <div className="max-w-7xl mx-auto">
               <Current />
+            </div> */}
+
+            <div className="max-w-7xl mx-auto">
+              <Before />
             </div>
-            <Before />
-            <Photos />
+            <div className="max-w-7xl mx-auto">
+              <Photos />
+            </div>
             <Blog />
             <Footer />
           </div>

@@ -1,11 +1,7 @@
 import ReactMarkdown from "react-markdown";
 
 const text = `
-Currently, I'm:
-
-- Helping to run the [MSJCS Club](https://msjcs.vercel.app) with amazing events to help people get into coding!
-- Building [Tripley](https://tripley.vercel.app), a travel app to help manage and plan your trips with ease.
-- Organizing [CodeDay Bay Area](https://codeday.org/ba), a hackathon for underserved students to break into tech
+- Helping to run [my school's CS club](https://msjcs.vercel.app) with amazing events to help people get into coding!
 - Probably coding & eating a snack 🍫
 `;
 
@@ -13,9 +9,9 @@ export const Current = () => {
   return (
     <div>
       <h1 className="md:text-left italic font-black mb-4 w-full">
-        Current Work
+        Currently, I'm
       </h1>
-      <ReactMarkdown className="prose prose-a:text-sky-600 text-paragraph max-w-2xl">
+      <ReactMarkdown className="prose marker:text-black prose-a:text-sky-600 text-paragraph max-w-2xl">
         {text}
       </ReactMarkdown>
     </div>

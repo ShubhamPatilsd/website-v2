@@ -1,7 +1,7 @@
 export const Photos = () => {
   return (
     <div className="max-w-4xl">
-      <h3 className="text-secondary mb-2">Photos!</h3>
+      <h1 className="md:text-left italic font-black mb-4 w-full">Photos!</h1>
       <p className="prose prose-a:text-sky-600 text-paragraph max-w-none">
         I've been learning how to take photos on a{" "}
         <a

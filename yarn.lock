@@ -2228,6 +2228,11 @@ quick-lru@^5.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
+react-bubble-ui@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-bubble-ui/-/react-bubble-ui-1.1.2.tgz#ac862aa62a2be309a77b2de946305db380e7dcd3"
+  integrity sha512-JZEoHHte7IwIXCXdMc21id+6jBTNFSX5tLMDpFzGHMh45fT8ompWijNmKZiE8d/uPeTI1jUYdp4uDxIaObglsg==
+
 react-dom@17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
@@ -2246,6 +2251,11 @@ react-icons@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.4.0.tgz#a13a8a20c254854e1ec9aecef28a95cdf24ef703"
   integrity sha512-fSbvHeVYo/B5/L4VhB7sBA1i2tS8MkT0Hb9t2H1AVPkwGfVHLJCqyr2Py9dKMxsyM63Eng1GkdZfbWj+Fmv8Rg==
+
+react-indiana-drag-scroll@^3.0.3-alpha:
+  version "3.0.3-alpha"
+  resolved "https://registry.yarnpkg.com/react-indiana-drag-scroll/-/react-indiana-drag-scroll-3.0.3-alpha.tgz#215572d235b330ce5e070b2e2f7f6872283e5a7d"
+  integrity sha512-Bo8Ium/CGs0oIYzk4wVDphuhrf2QRvLKTLO/+21M+czF1EQEII4w1UqoFs4lIGd84YpVL8UDXIcy2m9yzsFuRQ==
 
 react-is@^16.13.1:
   version "16.13.1"

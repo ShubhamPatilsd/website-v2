@@ -3,7 +3,7 @@ import { WorkTable } from "./WorkTable";
 export const WorkExperience = () => {
   return (
     <div>
-      <h1 className="md:text-left italic font-black">Work Experience</h1>
+      <h1 className="md:text-left italic font-black">Experience</h1>
 
       <div className="flex flex-col lg:flex-row mt-4 lg:space-x-10 space-y-6 lg:space-y-0">
         <div className="lg:w-1/2">

@@ -15,7 +15,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <div>
         <img
           src={urlFor(project.image).url()}
-          className="rounded-lg mx-auto lg:w-72 w-full md:w-[80%]"
+          className="rounded-lg mx-auto lg:w-72 w-full md:w-[100%]"
         />
       </div>
       <div className="mx-auto space-y-5  flex-1">

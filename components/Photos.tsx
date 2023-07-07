@@ -7,6 +7,50 @@ import BubbleUI from "react-bubble-ui";
 import { useEffect } from "react";
 // import { ScrollContainer } from "react-indiana-drag-scroll";
 
+const photosCount = 39;
+
+const photoLinks = [
+  "https://via.placeholder.com/400?text=Photo+1",
+  "https://via.placeholder.com/400?text=Photo+2",
+  "https://via.placeholder.com/400?text=Photo+3",
+  "https://via.placeholder.com/400?text=Photo+4",
+  "https://via.placeholder.com/400?text=Photo+5",
+  "https://via.placeholder.com/400?text=Photo+6",
+  "https://via.placeholder.com/400?text=Photo+7",
+  "https://via.placeholder.com/400?text=Photo+8",
+  "https://via.placeholder.com/400?text=Photo+9",
+  "https://via.placeholder.com/400?text=Photo+10",
+  "https://via.placeholder.com/400?text=Photo+11",
+  "https://via.placeholder.com/400?text=Photo+12",
+  "https://via.placeholder.com/400?text=Photo+13",
+  "https://via.placeholder.com/400?text=Photo+14",
+  "https://via.placeholder.com/400?text=Photo+15",
+  "https://via.placeholder.com/400?text=Photo+16",
+  "https://via.placeholder.com/400?text=Photo+17",
+  "https://via.placeholder.com/400?text=Photo+18",
+  "https://via.placeholder.com/400?text=Photo+19",
+  "https://via.placeholder.com/400?text=Photo+20",
+  "https://via.placeholder.com/400?text=Photo+21",
+  "https://via.placeholder.com/400?text=Photo+22",
+  "https://via.placeholder.com/400?text=Photo+23",
+  "https://via.placeholder.com/400?text=Photo+24",
+  "https://via.placeholder.com/400?text=Photo+25",
+  "https://via.placeholder.com/400?text=Photo+26",
+  "https://via.placeholder.com/400?text=Photo+27",
+  "https://via.placeholder.com/400?text=Photo+28",
+  "https://via.placeholder.com/400?text=Photo+29",
+  "https://via.placeholder.com/400?text=Photo+30",
+  "https://via.placeholder.com/400?text=Photo+31",
+  "https://via.placeholder.com/400?text=Photo+32",
+  "https://via.placeholder.com/400?text=Photo+33",
+  "https://via.placeholder.com/400?text=Photo+34",
+  "https://via.placeholder.com/400?text=Photo+35",
+  "https://via.placeholder.com/400?text=Photo+36",
+  "https://via.placeholder.com/400?text=Photo+37",
+  "https://via.placeholder.com/400?text=Photo+38",
+  "https://via.placeholder.com/400?text=Photo+39",
+];
+
 export const Photos = () => {
   // const scrollContainer = useScrollContainer({
   //   mouseScroll: { overscroll: true },
@@ -41,15 +85,14 @@ export const Photos = () => {
       x,
       y, //used for creating the array of circles
       clicked, //for saving the mouse state
-      HORIZONTAL = 20,
-      VERTICAL = 20, //how many circles will be on the canvas
-      RADIUS = window.innerWidth * 0.05, //size of circles
+      HORIZONTAL = 8,
+      VERTICAL = Math.max(photosCount / HORIZONTAL), //how many circles will be on the canvas
+      RADIUS = window.innerWidth * 0.1, //size of circles
       PADDINGX = 10,
       PADDINGY = 10, //the gap between circles
       SCALE_FACTOR = window.innerWidth * 0.5; //small number = icons get small faster, smaller number = icons get small slowly
 
     canvas.width = window.innerWidth;
-    console.log(window.innerWidth);
     canvas.height = window.innerWidth; //set canvas to full size of the window
 
     offsetX =
@@ -71,13 +114,21 @@ export const Photos = () => {
     x = 0;
     y = 0;
 
+    let photoIndexCounter = 0;
+
     for (i = 0; i < VERTICAL; i++) {
       for (j = 0; j < HORIZONTAL; j++) {
         var randomColor =
           colors[Math.round(Math.random() * (colors.length - 1))]; //generating a random color for the menu circle
 
-        circles.push({ x: x, y: y, color: randomColor }); //add circle with x and y coordinates and color to the array
+        circles.push({
+          x: x,
+          y: y,
+          color: randomColor,
+          src: photoLinks[photoIndexCounter],
+        }); //add circle with x and y coordinates and color to the array
         x += RADIUS * 2 + PADDINGX; //increase x for the next circle
+        photoIndexCounter++;
       }
 
       if (i % 2 == 0) {
@@ -89,8 +140,33 @@ export const Photos = () => {
       y += RADIUS * 2 + PADDINGY; //increase y for the next circle row
     }
 
+    // function draw() {
+    //   ctx.clearRect(0, 0, canvas.width, canvas.height); //clear the canvas
+
+    //   ctx.save();
+
+    //   ctx.translate(offsetX, offsetY);
+
+    //   for (i = 0; i < circles.length; i++) {
+    //     ctx.save();
+    //     scale = getDistance(circles[i]);
+    //     ctx.translate(circles[i].x, circles[i].y);
+    //     ctx.translate(RADIUS / 2, RADIUS / 2);
+    //     ctx.scale(scale, scale);
+    //     ctx.translate(-RADIUS / 2, -RADIUS / 2);
+
+    //     ctx.fillStyle = circles[i].color;
+    //     ctx.beginPath();
+    //     ctx.arc(0, 0, RADIUS, 0, Math.PI * 2);
+    //     ctx.fill();
+    //     ctx.restore();
+    //   }
+
+    //   ctx.restore();
+    //   requestAnimationFrame(draw);
+    // }
     function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height); //clear the canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
 
       ctx.save();
 
@@ -104,10 +180,17 @@ export const Photos = () => {
         ctx.scale(scale, scale);
         ctx.translate(-RADIUS / 2, -RADIUS / 2);
 
-        ctx.fillStyle = circles[i].color;
+        // Create circular clipping path
         ctx.beginPath();
         ctx.arc(0, 0, RADIUS, 0, Math.PI * 2);
-        ctx.fill();
+        ctx.closePath();
+        ctx.clip();
+
+        // Draw circle image
+        const circleImage = new Image();
+        circleImage.src = circles[i].src; // Replace with the path to your circle image
+        ctx.drawImage(circleImage, -RADIUS, -RADIUS, RADIUS * 2, RADIUS * 2);
+
         ctx.restore();
       }
 

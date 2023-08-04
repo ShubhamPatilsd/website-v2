@@ -353,7 +353,10 @@ export const Photos = () => {
           );
         })}
       </BubbleUI> */}
-      <canvas id="canvas" className="block static w-full"></canvas>
+      <div className="relative">
+        <canvas id="canvas" className="block static w-full"></canvas>
+      </div>
+      {/* </img> */}
 
       {/* </ScrollContainer> */}
       {/* </div> */}

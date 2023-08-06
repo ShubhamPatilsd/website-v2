@@ -12,6 +12,7 @@
     "@sanity/client": "^3.3.2",
     "@sanity/image-url": "^1.0.1",
     "axios": "^0.27.2",
+    "flickr-sdk": "^6.2.1",
     "next": "12.1.0",
     "next-seo": "^5.4.0",
     "react": "17.0.2",

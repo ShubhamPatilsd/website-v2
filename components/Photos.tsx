@@ -1,61 +1,31 @@
-import "react-bubble-ui/dist/index.css";
+// import "react-bubble-ui/dist/index.css";
 // import "react-indiana-drag-scroll/dist/style.css";
 
 // import { useDraggable } from "react-use-draggable-scroll";
 // @ts-ignore
 import BubbleUI from "react-bubble-ui";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 // import { ScrollContainer } from "react-indiana-drag-scroll";
 
 const photosCount = 39;
 
-const photoLinks = [
-  "https://via.placeholder.com/400?text=Photo+1",
-  "https://via.placeholder.com/400?text=Photo+2",
-  "https://via.placeholder.com/400?text=Photo+3",
-  "https://via.placeholder.com/400?text=Photo+4",
-  "https://via.placeholder.com/400?text=Photo+5",
-  "https://via.placeholder.com/400?text=Photo+6",
-  "https://via.placeholder.com/400?text=Photo+7",
-  "https://via.placeholder.com/400?text=Photo+8",
-  "https://via.placeholder.com/400?text=Photo+9",
-  "https://via.placeholder.com/400?text=Photo+10",
-  "https://via.placeholder.com/400?text=Photo+11",
-  "https://via.placeholder.com/400?text=Photo+12",
-  "https://via.placeholder.com/400?text=Photo+13",
-  "https://via.placeholder.com/400?text=Photo+14",
-  "https://via.placeholder.com/400?text=Photo+15",
-  "https://via.placeholder.com/400?text=Photo+16",
-  "https://via.placeholder.com/400?text=Photo+17",
-  "https://via.placeholder.com/400?text=Photo+18",
-  "https://via.placeholder.com/400?text=Photo+19",
-  "https://via.placeholder.com/400?text=Photo+20",
-  "https://via.placeholder.com/400?text=Photo+21",
-  "https://via.placeholder.com/400?text=Photo+22",
-  "https://via.placeholder.com/400?text=Photo+23",
-  "https://via.placeholder.com/400?text=Photo+24",
-  "https://via.placeholder.com/400?text=Photo+25",
-  "https://via.placeholder.com/400?text=Photo+26",
-  "https://via.placeholder.com/400?text=Photo+27",
-  "https://via.placeholder.com/400?text=Photo+28",
-  "https://via.placeholder.com/400?text=Photo+29",
-  "https://via.placeholder.com/400?text=Photo+30",
-  "https://via.placeholder.com/400?text=Photo+31",
-  "https://via.placeholder.com/400?text=Photo+32",
-  "https://via.placeholder.com/400?text=Photo+33",
-  "https://via.placeholder.com/400?text=Photo+34",
-  "https://via.placeholder.com/400?text=Photo+35",
-  "https://via.placeholder.com/400?text=Photo+36",
-  "https://via.placeholder.com/400?text=Photo+37",
-  "https://via.placeholder.com/400?text=Photo+38",
-  "https://via.placeholder.com/400?text=Photo+39",
-];
+interface PhotosProps {
+  photos: string[];
+}
 
-export const Photos = () => {
+export const Photos = ({ photos }: PhotosProps) => {
   // const scrollContainer = useScrollContainer({
   //   mouseScroll: { overscroll: true },
   // });
+
+  const [windowWidth, setWindowWidth] = useState(0);
+
   useEffect(() => {
+    const photoLinks = photos;
+
+    setWindowWidth(window.innerHeight);
+
     //@ts-ignore
     const canvas = document.querySelector("#canvas");
     const ctx = canvas.getContext("2d"); //get the canvas from html
@@ -85,15 +55,15 @@ export const Photos = () => {
       x,
       y, //used for creating the array of circles
       clicked, //for saving the mouse state
-      HORIZONTAL = 8,
-      VERTICAL = Math.max(photosCount / HORIZONTAL), //how many circles will be on the canvas
-      RADIUS = window.innerWidth * 0.1, //size of circles
-      PADDINGX = 10,
-      PADDINGY = 10, //the gap between circles
-      SCALE_FACTOR = window.innerWidth * 0.5; //small number = icons get small faster, smaller number = icons get small slowly
+      HORIZONTAL = 6,
+      VERTICAL = Math.max(photoLinks.length / HORIZONTAL), //how many circles will be on the canvas
+      RADIUS = window.innerHeight * 0.1, //size of circles
+      PADDINGX = -5,
+      PADDINGY = -5, //the gap between circles
+      SCALE_FACTOR = window.innerHeight * 0.6; //small number = icons get small faster, smaller number = icons get small slowly
 
     canvas.width = window.innerWidth;
-    canvas.height = window.innerWidth; //set canvas to full size of the window
+    canvas.height = window.innerHeight; //set canvas to full size of the window
 
     offsetX =
       (canvas.width -
@@ -108,7 +78,7 @@ export const Photos = () => {
         2 +
       RADIUS;
 
-    centerX = canvas.width / 2;
+    centerX = canvas.width * 0.4;
     centerY = canvas.height / 2;
 
     x = 0;
@@ -118,6 +88,10 @@ export const Photos = () => {
 
     for (i = 0; i < VERTICAL; i++) {
       for (j = 0; j < HORIZONTAL; j++) {
+        if (!photoLinks[photoIndexCounter]) {
+          continue;
+        }
+
         var randomColor =
           colors[Math.round(Math.random() * (colors.length - 1))]; //generating a random color for the menu circle
 
@@ -125,6 +99,7 @@ export const Photos = () => {
           x: x,
           y: y,
           color: randomColor,
+          // src: photoLinks[photoIndexCounter],
           src: photoLinks[photoIndexCounter],
         }); //add circle with x and y coordinates and color to the array
         x += RADIUS * 2 + PADDINGX; //increase x for the next circle
@@ -188,6 +163,7 @@ export const Photos = () => {
 
         // Draw circle image
         const circleImage = new Image();
+        // circleImage.src = circles[i].src; // Replace with the path to your circle image
         circleImage.src = circles[i].src; // Replace with the path to your circle image
         ctx.drawImage(circleImage, -RADIUS, -RADIUS, RADIUS * 2, RADIUS * 2);
 
@@ -211,10 +187,14 @@ export const Photos = () => {
       return scale;
     }
 
-    window.addEventListener("touchstart", handleTouch);
+    document
+      .getElementById("canvas")
+      .addEventListener("touchstart", handleTouch);
 
     function handleTouch(e) {
-      window.addEventListener("touchmove", handleSwipe);
+      document
+        .getElementById("canvas")
+        .addEventListener("touchmove", handleSwipe);
       startX = e.touches[0].clientX;
       startY = e.touches[0].clientY;
       oldOffsetX = offsetX;
@@ -228,15 +208,23 @@ export const Photos = () => {
       offsetY = oldOffsetY + mouseY - startY;
     }
 
-    window.addEventListener("touchend", () => {
-      window.removeEventListener("touchmove", handleSwipe);
+    document.getElementById("canvas").addEventListener("touchend", () => {
+      document
+        .getElementById("canvas")
+        .removeEventListener("touchmove", handleSwipe);
     });
 
-    window.addEventListener("mousedown", handleClick);
+    document
+      .getElementById("canvas")
+      .addEventListener("mousedown", handleClick);
 
     function handleClick(e) {
-      window.addEventListener("mousemove", handleMouse);
-      window.addEventListener("mouseup", handleRelease);
+      document
+        .getElementById("canvas")
+        .addEventListener("mousemove", handleMouse);
+      document
+        .getElementById("canvas")
+        .addEventListener("mouseup", handleRelease);
       startX = e.clientX;
       startY = e.clientY;
       oldOffsetX = offsetX;
@@ -252,13 +240,17 @@ export const Photos = () => {
     }
 
     function handleRelease() {
-      window.removeEventListener("mouseup", handleRelease);
-      window.removeEventListener("mousemove", handleMouse);
+      document
+        .getElementById("canvas")
+        .removeEventListener("mouseup", handleRelease);
+      document
+        .getElementById("canvas")
+        .removeEventListener("mousemove", handleMouse);
       canvas.style.cursor = "grab";
     }
 
     window.addEventListener("resize", () => {
-      canvas.height = window.innerWidth;
+      canvas.height = window.innerHeight;
       canvas.width = window.innerWidth;
       centerX = canvas.width / 2;
       centerY = canvas.height / 2;
@@ -290,79 +282,24 @@ export const Photos = () => {
         .
       </p>
 
-      {/* <div className="grid grid-flow-row-dense grid-cols-3 mt-4"> */}
-      {/* <ScrollContainer> */}
-      {/* <BubbleUI
-        options={{
-          size: 128,
-          minSize: 20,
-          gutter: 36,
-          provideProps: true,
-          numCols: 5,
-          fringeWidth: 180,
-          yRadius: 130,
-          xRadius: 221,
-          cornerRadius: 250,
-          showGuides: false,
-          compact: true,
-          gravitation: 2,
-        }}
-        style={{
-          width: "100%",
-          maxWidth: "1000px",
-          height: "500px",
-          borderRadius: "50px",
-        }}
-      >
-        {[
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-          "https://live.staticflickr.com/65535/52673888948_4df031d0e7_k.jpg",
-        ].map((imgurl) => {
-          const imagepx = 100;
-          return (
-            <div
-              // src={imgurl}
-              style={{
-                backgroundImage: `url(${imgurl})`,
-                backgroundPosition: "center center",
-                width: "100%",
-                height: "100%",
-                borderRadius: "50%",
-                // backgroundSize: `${imagepx * 1.56}px`,
-                // height: `${imagepx}px`,
-                // width: `${imagepx}px`,
-              }}
-              className={`rounded-full shadow-lg transition w-36 h-36 hover:scale-110 bg-cover bg-center select-none`}
-            />
-          );
-        })}
-      </BubbleUI> */}
-      <div className="relative">
-        <canvas id="canvas" className="block static w-full"></canvas>
+      <div className="absolute left-0">
+        <canvas id="canvas" className="left-0"></canvas>
       </div>
+
+      <div style={{ height: windowWidth }}></div>
+
       {/* </img> */}
 
       {/* </ScrollContainer> */}
       {/* </div> */}
-      <a href="google.com">
-        <div className="w-full border border-red-500">
-          <p className="underline text-center">View all</p>
+      <a
+        href="https://flickr.com/photos/195755423@N04/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div className="w-full border border-gray-150 rounded-sm py-2 hover:bg-neutral-100 underline text-center">
+          {/* <p className="">View all</p> */}
+          View all
         </div>
       </a>
     </div>

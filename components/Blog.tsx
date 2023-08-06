@@ -57,16 +57,21 @@ export const Blog = () => {
 
   return (
     <div className="max-w-4xl">
-      <h3 className="text-secondary mb-2">Blog Posts</h3>
+      <h1 className="md:text-left italic font-black mb-4 w-full">Blog Posts</h1>
       <p className="prose prose-a:text-sky-600 text-paragraph max-w-none">
         Here are some blogs that I've written :)
       </p>
 
-      <div className="mt-4 space-y-2">
+      <div className="mt-4">
         {blogs.map((blog, i) => {
           return (
-            <a target="_blank" href={blog.url} rel="noopener noreferrer">
-              <div className="cursor-pointer">
+            <a
+              target="_blank"
+              href={blog.url}
+              className="cursor-pointer"
+              rel="noopener noreferrer"
+            >
+              <div className={`${i !== 0 ? "mt-2" : "mt-0"}`}>
                 <BlogCard blog={blog} />
               </div>
             </a>

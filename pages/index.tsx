@@ -15,12 +15,15 @@ import { Footer } from "../components/Footer";
 import { ScrollDown } from "../components/ScrollDown";
 import { About } from "../components/About";
 import { WorkExperience } from "../components/WorkExperience/WorkExperience";
+import axios from "axios";
+import Flickr from "flickr-sdk";
 
 interface SanityProjectProps {
   projects: Result[];
+  photos: string[];
 }
 
-const Home: NextPage<SanityProjectProps> = ({ projects }) => {
+const Home: NextPage<SanityProjectProps> = ({ projects, photos }) => {
   const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
     setTimeout(() => {
@@ -81,9 +84,13 @@ const Home: NextPage<SanityProjectProps> = ({ projects }) => {
               <Before />
             </div>
             <div className="max-w-7xl mx-auto">
-              <Photos />
+              <Photos photos={photos} />
             </div>
-            <Blog />
+
+            <div className="max-w-7xl mx-auto">
+              <Blog />
+            </div>
+
             <Footer />
           </div>
         </div>
@@ -100,6 +107,30 @@ const Home: NextPage<SanityProjectProps> = ({ projects }) => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
+  const flickr = new Flickr(process.env.FLICKR_API_KEY);
+
+  // const res = await axios.get(
+  //   "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.flickr.com%2Fservices%2Ffeeds%2Fphotos_public.gne%3Fid%3D195755423%40N04"
+  // );
+
+  // console.log(res.data.items);
+
+  // const photoUrls = res.data.items.map((item: any) => item.enclosure.link);
+
+  // console.log(photoUrls)
+
+  const { body } = await flickr.people.getPublicPhotos({
+    user_id: "195755423@N04",
+  });
+  console.log(body.photos.photo);
+
+  const photoUrls = body.photos.photo.map(
+    (photo: any) =>
+      `https://live.staticflickr.com/${"65535"}/${photo.id}_${
+        photo.secret
+      }_${"q"}.jpg`
+  );
+
   // It's important to default the slug so that it doesn't return "undefined"
   const projects = await client.fetch(
     `
@@ -109,6 +140,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       projects,
+      photos: photoUrls,
     },
   };
 };

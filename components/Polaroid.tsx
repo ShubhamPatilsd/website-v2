@@ -1,6 +1,10 @@
 export const Polaroid = () => {
   return (
-    <div className="p-4 rotate-[4deg] transform h-fit bg-white w-72 shadow-md rounded-lg border border-gray-150 space-y-3">
+    <div
+      className={`p-4 rotate-[${
+        Math.floor(Math.random() * 2) === 0 ? "-" : ""
+      }4deg] transform h-fit bg-white w-72 shadow-md rounded-lg border border-gray-150 space-y-3`}
+    >
       <img
         src="https://avatars.githubusercontent.com/u/55328098?v=4"
         className="rounded-md"

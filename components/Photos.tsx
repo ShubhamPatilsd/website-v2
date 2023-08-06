@@ -60,7 +60,7 @@ export const Photos = ({ photos }: PhotosProps) => {
       RADIUS = window.innerHeight * 0.1, //size of circles
       PADDINGX = -5,
       PADDINGY = -5, //the gap between circles
-      SCALE_FACTOR = window.innerHeight * 0.6; //small number = icons get small faster, smaller number = icons get small slowly
+      SCALE_FACTOR = window.innerHeight * 0.7; //small number = icons get small faster, smaller number = icons get small slowly
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight; //set canvas to full size of the window

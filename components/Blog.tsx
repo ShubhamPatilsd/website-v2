@@ -65,16 +65,16 @@ export const Blog = () => {
       <div className="mt-4">
         {blogs.map((blog, i) => {
           return (
-            <a
-              target="_blank"
-              href={blog.url}
-              className="cursor-pointer"
-              rel="noopener noreferrer"
-            >
-              <div className={`${i !== 0 ? "mt-2" : "mt-0"}`}>
+            <div className={`${i !== 0 ? "mt-2" : "mt-0"}`}>
+              <a
+                target="_blank"
+                href={blog.url}
+                className=""
+                rel="noopener noreferrer"
+              >
                 <BlogCard blog={blog} />
-              </div>
-            </a>
+              </a>
+            </div>
           );
         })}
       </div>

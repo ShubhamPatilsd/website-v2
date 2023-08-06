@@ -7,7 +7,7 @@ interface BlogCardProps {
 
 export const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
   return (
-    <div className="p-4 shadow rounded-lg border border-gray-150 bg-white cursor-default hover:bg-neutral-100 transition space-y-2">
+    <div className="p-4 shadow rounded-lg border border-gray-150 bg-white hover:bg-neutral-100 transition space-y-2">
       <p className="text-xl font-medium">{blog.title}</p>
       <div className="mb-3 mt-2">
         <p className="">

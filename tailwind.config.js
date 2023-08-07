@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      cursor: {
+        default: "url(/pixelated-cursor-2.svg), default",
+        pointer: "url(/pointercursor.svg), pointer",
+      },
       colors: {
         accent: "var(--accent)",
         paragraph: "var(--paragraph)",

@@ -18,6 +18,8 @@
   --secondary: #00b894;
 }
 
+a, button { @apply cursor-pointer; }
+
 @layer base {
   html,
   body,

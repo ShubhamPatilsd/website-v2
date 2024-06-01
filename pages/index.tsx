@@ -17,6 +17,7 @@ import { About } from "../components/About";
 import { WorkExperience } from "../components/WorkExperience/WorkExperience";
 import axios from "axios";
 import Flickr from "flickr-sdk";
+import { Awards } from "../components/Awards/Awards";
 
 interface SanityProjectProps {
   projects: Result[];
@@ -71,6 +72,10 @@ const Home: NextPage<SanityProjectProps> = ({ projects, photos }) => {
             </div>
             <div className="max-w-7xl mx-auto flex justify-center">
               <WorkExperience />
+            </div>
+
+            <div className="max-w-7xl mx-auto flex justify-center">
+              <Awards />
             </div>
             <div className="max-w-7xl mx-auto">
               <Projects projects={projects} />

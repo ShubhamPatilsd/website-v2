@@ -26,7 +26,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         <Meta />
       </Head>
-      <div className="cursor-default">
+      <div className={`cursor-default `}>
         <Component {...pageProps} />
       </div>
     </>

@@ -13,14 +13,7 @@ export const Hero = () => {
             </p>
             <h1 className="md:text-left text-center">Shubham Patil</h1>
             <p className="max-w-xl md:text-left text-center prose prose-a:text-sky-600 text-paragraph">
-              I'm a
-              {" " +
-                (new Date(
-                  Date.now() - new Date("29 September 2007").getTime()
-                ).getFullYear() -
-                  1970) +
-                " "}
-              year old student and fullstack developer based in the Bay Area. I
+              I'm a fullstack developer based in the Bay Area. I
               like to learn by making projects, and I have numerous on my GitHub
               profile. Currently I'm building{" "}
               <a

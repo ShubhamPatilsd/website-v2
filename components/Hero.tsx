@@ -17,14 +17,13 @@ export const Hero = () => {
               like to learn by making projects, and I have numerous on my GitHub
               profile. Currently I'm building{" "}
               <a
-                href="https://tripley.app"
+                href="https://getristoro.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Tripley
               </a>
-              , a travel app that helps you manage and plan your trips with
-              ease.
+              , a restaurant recommendation tool to help you find local gems.
             </p>
           </div>
           <Image

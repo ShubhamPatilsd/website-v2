@@ -21,7 +21,7 @@ export const Hero = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Tripley
+                Ristoro
               </a>
               , a restaurant recommendation tool to help you find local gems.
             </p>

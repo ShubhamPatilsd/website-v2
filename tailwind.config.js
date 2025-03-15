@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       cursor: {
         default: "url(/pixelated-cursor-2.svg), default",
-        pointer: "url(/pointercursor.svg), pointer",
+        pointer: "url(/cursornoline.svg), pointer",
       },
       colors: {
         accent: "var(--accent)",
@@ -20,16 +20,7 @@ module.exports = {
       },
 
       fontFamily: {
-        sans: [
-          "EB Garamond",
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Segoe UI",
-          "Roboto",
-          "Helvetica",
-          "Arial",
-          "sans-serif",
-        ],
+        sans: ["NeueMontreal"],
         monospace: ["Fira Code", "monospace"],
       },
     },

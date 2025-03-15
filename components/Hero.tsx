@@ -1,41 +1,26 @@
-import Image from "next/image";
-import Link from "next/link";
-
 export const Hero = () => {
   return (
     <>
-      <div className="space-y-4">
-        <div className="flex-col-reverse flex justify-left md:flex-row">
-          <div className="space-y-2 md:space-y-4 pt-16 md:pt-0 md:pr-16">
-            <p className="uppercase tracking-[0.2em] text-xs text-center md:text-left">
+      <div className="relative w-full h-full overflow-x-hidden space-y-4">
+        <div className=" p-12">
+          <h1 className="flex md:text-left leading-[0.9em] text-[11rem] font-semibold text-center">
+            <div className="">Shubham Patil</div>
+          </h1>
+          {/* text-[3.5rem] */}
+          <p
+            className="mt-[2rem] w-full font-light
+
+            text-[2rem]
+           md:text-left  bottom-[3rem] left-[3rem] text-center prose prose-a:text-sky-600"
+          >
+            Software Engineer building coo
+          </p>
+
+          {/* <p className="uppercase tracking-[0.2em] text-xs text-center md:text-left">
               {" "}
               Hey there! I'm
-            </p>
-            <h1 className="md:text-left text-6xl md:text-8xl italic font-black text-center">
-              Shubham Patil
-            </h1>
-            <p className="max-w-xl md:text-left text-center prose prose-a:text-sky-600 text-paragraph">
-              I'm a
-              {" " +
-                (new Date(
-                  Date.now() - new Date("29 September 2007").getTime()
-                ).getFullYear() -
-                  1970) +
-                " "}
-              year old student and fullstack developer based in the Bay Area. I
-              like to learn by making projects, and I have numerous on my GitHub
-              profile. Currently I'm building{" "}
-              <a
-                href="https://tripley.app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Tripley
-              </a>
-              , a travel app that helps you manage and plan your trips with
-              ease.
-            </p>
-          </div>
+            </p> */}
+
           {/* <Image
             src="https://avatars.githubusercontent.com/u/55328098?v=4"
             width={150}
@@ -46,6 +31,31 @@ export const Hero = () => {
             className="rounded-full"
           /> */}
         </div>
+
+        {/* <p className="w-full md:text-left absolute bottom-[3rem] left-[3rem] text-center prose prose-a:text-sky-600 text-paragraph">
+          I'm a
+          {" " +
+            (new Date(
+              Date.now() - new Date("29 September 2007").getTime()
+            ).getFullYear() -
+              1970) +
+            " "}
+          year old student and fullstack developer based in the Bay Area. I like
+          to learn by making projects, and I have numerous on my GitHub profile.
+          Currently I'm building{" "}
+          <a
+            href="https://tripley.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tripley
+          </a>
+          , a travel app that helps you manage and plan your trips with ease.
+        </p>
+        
+        
+        */}
+
         {/* <div className="flex space-x-4">
           <Link href="https://github.com/ShubhamPatilsd">
             <p className="font-monospace text-accent hover:underline cursor-pointer">
@@ -69,6 +79,27 @@ export const Hero = () => {
             </p>
           </Link>
         </div> */}
+        <div className="select-none text-3xl overflow-hidden absolute -bottom-[20vh] text-right -right-[10vw]">
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⡴⠶⠞⠛⠛⠉⠉⠉⠉⠉⠉⠛⠛⠶⢦⣄⡀⠀⠀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣶⣾⠿⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠈⠛⢦⡀⠀
+          ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⠶⢛⣩⠶⠛⠉⠀⠀⠀⣀⣤⡴⠶⠚⠛⠛⠛⠉⠛⠛⠛⢶⡟⠉⢻⡄⠀⠀⠀⠈⢻⡄
+          ⠀⠀⠀⠀⠀⠀⠀⣠⡴⠟⢉⣠⠶⠋⠁⠀⠀⣠⡴⠞⠋⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠷⡤⠾⣇⠀⠀⠀⠀⠀⣿
+          ⠀⠀⠀⠀⣠⡴⠛⠁⣀⡴⠛⠁⠀⢀⣠⠶⠛⠁⠀⠀⠀⣀⣠⡤⠶⠒⠛⠛⠛⠛⠛⠶⣤⡀⠀⠀⠀⢹⡆⠀⠀⠀⠀⢸
+          ⠀⢀⣴⠟⠁⠀⣠⡾⠋⠀⠀⢀⡴⠛⠁⠀⢰⠞⠳⡶⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣷⠀⠀⠀⢈⡇⠀⠀⠀⠀⣾
+          ⢴⠟⠁⠀⢀⡼⠋⠀⠀⢀⡴⠋⠀⠀⠀⣠⡾⠷⠶⠇⢀⣠⣤⠶⠖⠲⢶⣄⠀⠀⠀⠀⠀⡿⠀⠀⠀⢸⡇⠀⠀⠀⢰⡏
+          ⠀⠀⠀⣰⠟⠀⠀⠀⣴⠏⠀⠀⠀⣠⠞⠉⠀⠀⣠⡶⠋⠁⠀⠀⠀⠀⢀⡿⠀⠀⠀⠀⣼⠃⠀⠀⢀⡟⠂⠀⠀⢠⡟⠀
+          ⠀⢀⣼⠋⠀⠀⢀⡾⠁⠀⠀⢠⡞⠁⠀⠀⢠⡾⠁⠀⠀⠀⠀⣀⣀⣠⡾⠁⠀⠀⣠⡾⠁⠀⠀⢠⡞⠁⠀⠀⣰⠟⠀⠀
+          ⠀⣾⠃⠀⢠⡟⠛⣷⠂⠀⢠⡟⠀⠀⠀⠀⢾⡀⠀⠀⠀⠀⣸⣏⣹⡏⠀⠀⣠⡾⠋⠀⠀⢀⣴⠏⠀⠀⢀⡼⠋⠀⠀⠀
+          ⣸⠇⠀⠀⠈⢻⡶⠛⠀⠀⣿⠀⠀⠀⠀⠀⠈⠛⠲⠖⠚⠋⠉⠉⠉⣀⣤⠞⠋⠀⠀⢀⣴⠟⠁⠀⠀⣰⠟⠁⠀⣴⠆⠀
+          ⣿⠀⠀⠀⠀⢸⡇⠀⠀⠀⢻⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⠶⠛⠉⣀⣀⡀⣀⡴⠟⠁⠀⢀⣤⠞⠁⢀⣴⠟⠁⠀⠀
+          ⣿⠀⠀⠀⠀⠘⣧⠀⠀⠀⠀⠙⠳⠶⠤⣤⠤⠶⠶⠚⠋⠉⠀⠀⠀⡟⠉⠈⢻⡏⠀⠀⣀⡴⠛⠁⣠⡶⠋⠁⠀⠀⠀⠀
+          ⢻⡀⠀⠀⠀⠀⠘⢷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⠶⠻⢦⣤⠟⣀⣤⠞⢋⣠⡴⠛⠁⠀⠀⠀⠀⠀⠀⠀
+          ⠈⢿⣄⠀⠀⠀⠀⠀⠈⠛⠳⠶⠤⠤⠤⠤⠤⠴⠶⠒⠛⠉⠁⠀⠀⢀⣠⡴⣞⣋⣤⠶⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+          ⠀⠀⠙⢷⡶⠛⠳⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣴⣾⠿⠿⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+          ⠀⠀⠀⠘⣧⡀⣀⣿⠦⣤⣤⣤⣤⣤⣤⠤⠶⠶⠞⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+          ⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        </div>
       </div>
     </>
   );

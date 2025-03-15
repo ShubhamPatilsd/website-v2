@@ -3,7 +3,7 @@ import { Polaroid } from "./Polaroid";
 export const About = () => {
   return (
     <div>
-      <h1 className="md:text-left italic font-black">Hacking Since '07</h1>
+      <h1 className="md:text-left">Hacking Since '07</h1>
 
       <div className="flex flex-col xl:flex-row mt-4 space-x-0 xl:space-x-24 space-y-12 xl:space-y-0">
         <div className="w-full xl:w-1/2">
@@ -27,50 +27,6 @@ export const About = () => {
             amet dictum sit amet. Volutpat lacus laoreet non curabitur gravida
             arcu. Egestas tellus rutrum tellus pellentesque eu tincidunt tortor.
             <br />
-            <br />
-            Enim sed faucibus turpis in eu mi bibendum neque. Orci eu lobortis
-            elementum nibh tellus molestie nunc non. Convallis aenean et tortor
-            at risus. A erat nam at lectus urna. Nullam vehicula ipsum a arcu
-            cursus vitae congue mauris. Posuere urna nec tincidunt praesent.
-            Lacus sed viverra tellus in hac habitasse platea. Etiam sit amet
-            nisl purus. Egestas diam in arcu cursus euismod. Libero nunc
-            consequat interdum varius. Eu tincidunt tortor aliquam nulla
-            facilisi cras fermentum odio. Pharetra magna ac placerat vestibulum
-            lectus mauris ultrices eros. Eros in cursus turpis massa tincidunt
-            dui. Sociis natoque penatibus et magnis dis parturient. Aenean sed
-            adipiscing diam donec. Vel quam elementum pulvinar etiam non. Sed
-            egestas egestas fringilla phasellus faucibus scelerisque eleifend
-            donec. <br />
-            <br />
-            Eleifend quam adipiscing vitae proin. Fames ac turpis egestas
-            maecenas pharetra convallis. Nunc lobortis mattis aliquam faucibus
-            purus in. Phasellus egestas tellus rutrum tellus. Ultrices dui
-            sapien eget mi. Turpis egestas maecenas pharetra convallis posuere.
-            Ridiculus mus mauris vitae ultricies leo integer malesuada nunc.
-            Condimentum id venenatis a condimentum vitae. Odio eu feugiat
-            pretium nibh ipsum. Tempor orci dapibus ultrices in iaculis nunc sed
-            augue lacus. Congue quisque egestas diam in arcu cursus euismod quis
-            viverra. Sit amet luctus venenatis lectus magna fringilla urna
-            porttitor. Arcu odio ut sem nulla. Auctor eu augue ut lectus arcu
-            bibendum. <br />
-            <br />
-            Pellentesque sit amet porttitor eget dolor. Pulvinar etiam non quam
-            lacus suspendisse faucibus interdum posuere lorem. A diam
-            sollicitudin tempor id eu nisl nunc mi ipsum. Amet justo donec enim
-            diam vulputate ut pharetra sit. Duis tristique sollicitudin nibh sit
-            amet commodo nulla facilisi nullam. Risus at ultrices mi tempus
-            imperdiet nulla malesuada pellentesque. Potenti nullam ac tortor
-            vitae purus faucibus. Velit scelerisque in dictum non consectetur a
-            erat. Consectetur adipiscing elit duis tristique sollicitudin nibh
-            sit amet commodo. Dui vivamus arcu felis bibendum ut tristique et
-            egestas. Vestibulum morbi blandit cursus risus at ultrices mi. Nunc
-            eget lorem dolor sed viverra ipsum. Nisi scelerisque eu ultrices
-            vitae auctor eu augue ut.
-            <br />
-            <br /> Neque gravida in fermentum et. Lorem sed risus ultricies
-            tristique nulla aliquet enim tortor at. Quisque id diam vel quam
-            elementum pulvinar etiam non. Vel pharetra vel turpis nunc eget
-            lorem dolor sed.
           </p>
         </div>
         {/* pictures */}

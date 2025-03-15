@@ -29,27 +29,26 @@ interface SanityProjectProps {
 }
 
 const Home: NextPage<SanityProjectProps> = ({ projects, photos }) => {
-  const [loading, setLoading] = useState<boolean>(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 1500);
-  }, []);
+  const [loading, setLoading] = useState<boolean>(false);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 1500);
+  // }, []);
 
   return !loading ? (
     <>
-      <FadeIn>
-        <ReactLenis root>
-          <ClickSpark
-            sparkColor="#000"
-            sparkSize={10}
-            sparkRadius={15}
-            sparkCount={8}
-            duration={400}
-          >
-            <CursorLines />
-            {/* <Navbar /> */}
-            {/* <div className="z-0">
+      <ReactLenis root>
+        <ClickSpark
+          sparkColor="#000"
+          sparkSize={10}
+          sparkRadius={15}
+          sparkCount={8}
+          duration={400}
+        >
+          <CursorLines />
+          {/* <Navbar /> */}
+          {/* <div className="z-0">
             <img
               className="z-0  right-[10%] top-0 select-none ease-in-out duration-700 absolute"
               src="/Vectorblobblue.svg"
@@ -59,55 +58,54 @@ const Home: NextPage<SanityProjectProps> = ({ projects, photos }) => {
               src="/Vectorblobpurple.svg"
             />
           </div> */}
-            {/* <div className="h-screen z-0 bg-[url('https://tailwindui.com/img/beams-home@95.jpg)]"> */}
-            <img
-              className="z-0 opacity-50 select-none w-screen absolute h-screen z-[-99999]"
-              src="/beambackground.jpg"
-            />
-            {/* <img
+          {/* <div className="h-screen z-0 bg-[url('https://tailwindui.com/img/beams-home@95.jpg)]"> */}
+          <img
+            className="z-0 opacity-50 select-none w-screen absolute h-screen z-[-99999]"
+            src="/beambackground.jpg"
+          />
+          {/* <img
               className="z-0  left-1/4 bottom-1/4 select-none absolute"
               src="/Vectorblobpurple.svg"
             /> */}
-            {/* </div> */}
-            <div className="relative">
-              <div className="flex justify-center h-[100vh] items-center  ">
-                <Hero />
+          {/* </div> */}
+          <div className="relative">
+            <div className="flex justify-center h-[100vh] items-center  ">
+              <Hero />
+            </div>
+            <div className="space-y-16 md:justify-center relative z-99 p-8 md:py-[6.25rem] md:px-[8rem]">
+              <div className="flex justify-center">
+                <ScrollDown />
               </div>
-              <div className="space-y-16 md:justify-center relative z-99 p-8 md:py-[6.25rem] md:px-[8rem]">
-                <div className="flex justify-center">
-                  <ScrollDown />
-                </div>
-                <div className="max-w-7xl mx-auto">
-                  <About />
-                </div>
-                <div className="max-w-7xl mx-auto flex justify-center">
-                  <WorkExperience />
-                </div>
-                <div className="max-w-7xl mx-auto flex justify-center">
-                  <Awards />
-                </div>
-                <div className="max-w-7xl mx-auto">
-                  <Projects projects={projects} />
-                </div>
-                {/*
+              <div className="max-w-7xl mx-auto">
+                <About />
+              </div>
+              <div className="max-w-7xl mx-auto flex justify-center">
+                <WorkExperience />
+              </div>
+              {/* <div className="max-w-7xl mx-auto flex justify-center">
+                <Awards />
+              </div> */}
+              <div className="max-w-7xl mx-auto">
+                <Projects projects={projects} />
+              </div>
+              {/*
               <div className="max-w-7xl mx-auto">
                 <Current />
               </div> */}
-                <div className="max-w-7xl mx-auto">
-                  <Before />
-                </div>
-                <div className="max-w-7xl mx-auto">
-                  <Photos photos={photos} />
-                </div>
-                <div className="max-w-7xl mx-auto">
-                  <Blog />
-                </div>
-                <Footer />
+              <div className="max-w-7xl mx-auto">
+                <Before />
               </div>
+              <div className="max-w-7xl mx-auto">
+                <Photos photos={photos} />
+              </div>
+              <div className="max-w-7xl mx-auto">
+                <Blog />
+              </div>
+              <Footer />
             </div>
-          </ClickSpark>
-        </ReactLenis>
-      </FadeIn>
+          </div>
+        </ClickSpark>
+      </ReactLenis>
     </>
   ) : (
     <div className="h-screen flex justify-center items-center transition duration-150 ease-in-out">
@@ -141,8 +139,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
     (photo: any) =>
       `https://live.staticflickr.com/${"65535"}/${photo.id}_${
         photo.secret
-      }_${"q"}.jpg`
+      }_${"b"}.jpg`
   );
+
+  console.log(photoUrls);
 
   // It's important to default the slug so that it doesn't return "undefined"
   const projects = await client.fetch(

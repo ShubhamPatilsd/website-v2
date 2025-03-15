@@ -1,19 +1,22 @@
+import ScrollReveal from "./Animations/ScrollReveal";
+
 export const Hero = () => {
   return (
     <>
       <div className="relative w-full h-full overflow-x-hidden space-y-4">
         <div className=" p-12">
-          <h1 className="flex md:text-left leading-[0.9em] text-[11rem] font-semibold text-center">
-            <div className="">Shubham Patil</div>
+          <h1 className="flex w-full text-center leading-[1em] text-[12vw]">
+            Shubham Patil
           </h1>
+
           {/* text-[3.5rem] */}
           <p
             className="mt-[2rem] w-full font-light
 
-            text-[2rem]
+            text-[1.7rem]
            md:text-left  bottom-[3rem] left-[3rem] text-center prose prose-a:text-sky-600"
           >
-            Software Engineer building coo
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
           </p>
 
           {/* <p className="uppercase tracking-[0.2em] text-xs text-center md:text-left">

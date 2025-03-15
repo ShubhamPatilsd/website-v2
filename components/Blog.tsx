@@ -57,7 +57,7 @@ export const Blog = () => {
 
   return (
     <div className="max-w-4xl">
-      <h1 className="md:text-left italic font-black mb-4 w-full">Blog Posts</h1>
+      <h1 className="md:text-left font-black mb-4 w-full">Blog Posts</h1>
       <p className="prose prose-a:text-sky-600 text-paragraph max-w-none">
         Here are some blogs that I've written :)
       </p>

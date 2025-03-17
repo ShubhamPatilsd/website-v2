@@ -3,7 +3,7 @@ import { Polaroid } from "./Polaroid";
 export const About = () => {
   return (
     <div>
-      <h1 className="md:text-left">Hacking Since '07</h1>
+      <h1 className="md:text-left text-gray-600">Hacking Since '07</h1>
 
       <div className="flex flex-col xl:flex-row mt-4 space-x-0 xl:space-x-24 space-y-12 xl:space-y-0">
         <div className="w-full xl:w-1/2">
